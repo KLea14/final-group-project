@@ -12,6 +12,25 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+// Handle form submission
+document.getElementById('loginFormModal').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting
+
+    // Get form values
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+
+    // You can perform validation here if needed
+
+    // Example of displaying a greeting message
+    alert(`Hello ${firstName} ${lastName}, you are logged in with email ${email} and phone number ${phone}.`);
+
+    // Optionally, close modal after successful login
+    $('#loginModal').modal('hide');
+});
+
 // Reaction Game
 let start;
 document.getElementById('startReactionGame').addEventListener('click', () => {
